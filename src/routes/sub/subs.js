@@ -24,8 +24,8 @@ router.post("/session", async (req, res) => {
           quantity: 1,
         },
       ],
-      success_url: "http://localhost:3000/postule-success",
-      cancel_url: "http://localhost:3000/",
+      success_url: process.env.URL_FRONTEND + "/postule-success",
+      cancel_url: process.env.URL_FRONTEND,
       customer: user?.customerStripeId,
     },
     {
@@ -75,8 +75,8 @@ router.post("/session-paiement", async (req, res) => {
             quantity: 1,
           },
         ],
-        success_url: "http://localhost:3000/project-payment-success",
-        cancel_url: "http://localhost:3000/",
+        success_url: process.env.URL_FRONTEND + "/project-payment-success",
+        cancel_url: process.env.URL_FRONTEND,
         customer: user?.customerStripeId,
       },
       {
